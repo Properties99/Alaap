@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mivida Park Apartment</title>
+    <link rel="stylesheet" href="property-styles.css">
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const typeSelect = document.getElementById('type');
+            const detailsDiv = document.getElementById('details');
+            
+            const propertyDetails = {
+                'Mazzarine Apartments': 'G+5 /G+8, 141-253 From 9.5~16.7 Over 7 Years',
+                'The Gate Towers': 'The gate towers 44 floor, the highest tower in African north coast. Spaces starting from 51 meter to 387 meter',
+                'North Edge Towers': '40 floors, spaces starting from 90 meter to 351 meter',
+                'Downtown Al Almien': 'Downtown G+9, starting spaces from 157 to 330 meter, prices starting from 7.4 to 14.2M over 7Y',
+                'Latin District': 'Latin city, G+4 & G+7, starting spaces from 66 meter to 234 meter, prices over 7 years starting from 3.4 to 14.5M',
+                'New Garden City Heights R5': 'Apartments starting spaces from 138 meter to 351 meter, prices over 7 years starting from 9.7M to 23M. 956 acres, international schools, international universities (University of Hertfordshire), club house, commercial areas, elevators, underground parking, triple play, bike lanes, emergency exits, admin offices, clinics',
+                'El Maqsed': '956 acres, international schools, international universities (University of Hertfordshire), club house, commercial areas, elevators, underground parking, triple play, bike lanes, emergency exits, admin offices, clinics. // 425 acres, 3 international schools (Al Bayan, Leads, Angelo America), 3 international universities (European University, University of Canada in Egypt, British Coventry University), New Capital Sports City, commercial areas, elevators, underground parking, triple play, bike lanes, emergency exits, admin offices, clinics'
+            };
+
+            typeSelect.addEventListener('change', function() {
+                const selectedType = typeSelect.value;
+
+                if (selectedType) {
+                    detailsDiv.innerHTML = propertyDetails[selectedType];
+                } else {
+                    detailsDiv.innerHTML = '';
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Mivida Park Apartment</h1>
+        <form id="propertyForm">
+            <label for="type">Choose Type:</label>
+            <select id="type" required>
+                <option value="">--Choose a type--</option>
+                <option value="Mazzarine Apartments">Mazzarine Apartments</option>
+                <option value="The Gate Towers">The Gate Towers</option>
+                <option value="North Edge Towers">North Edge Towers</option>
+                <option value="Downtown Al Almien">Downtown Al Almien</option>
+                <option value="Latin District">Latin District</option>
+                <option value="New Garden City Heights R5">New Garden City Heights R5</option>
+                <option value="El Maqsed">El Maqsed</option>
+            </select>
+
+            <label for="details">Details:</label>
+            <div id="details"></div>
+        </form>
+    </div>
+</body>
+</html>
